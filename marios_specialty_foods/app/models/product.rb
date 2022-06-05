@@ -9,6 +9,21 @@ class Product < ApplicationRecord
 
   before_save(:titleize_product)
 
+  scope :recent_products, -> {(where(updated_at:"updated_at")
+  .order("updated_at DESC").last(3)
+  )}
+
+  # scope :united_states, -> {(where(country_of_origin: "United States of America")
+  # )}
+
+#   scope :CHANGE_ME -> {(
+
+#   # where("count(reviews.rating) as ratings_count")
+# # .joins(:reviews)
+  
+
+#     )}
+
   private
   def titleize_product
     self.name = self.name.titleize

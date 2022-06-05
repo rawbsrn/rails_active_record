@@ -2,9 +2,13 @@
 
 <% if @products.any? %>
   <ul>
-    <% @products.each do |product| %>
+    # <% @products.united_states.each do |product| %>
+    #   <li><%= link_to product.name, product_path(product) %></li>
+    # <% end %>
+    <% @products.recent_products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
+    
   </ul>
 <% else %>
   <p>There are no products yet.</p>
