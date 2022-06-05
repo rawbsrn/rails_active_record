@@ -2,13 +2,18 @@
 
 <% if @products.any? %>
   <ul>
-    # <% @products.united_states.each do |product| %>
-    #   <li><%= link_to product.name, product_path(product) %></li>
-    # <% end %>
+    <h2>Products of the USA</h2>
+    <% @products.united_states.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+    <h2>Recently Updated Products</h2>
     <% @products.recent_products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
-    
+    <h2>Most Well Reviewed Products</h2>
+    <% @products.review_ratings.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
   </ul>
 <% else %>
   <p>There are no products yet.</p>
