@@ -14,13 +14,12 @@ class Product < ApplicationRecord
   )}
 
   scope :review_ratings, -> {(
-  select("products.id, products.name, reviews.id, reviews.author, count(reviews.rating) as ratings_count")
+  select("products.id, products.name, reviews.id, count(reviews.rating) as ratings_count")
   .joins(:reviews)
   .group("products.id, reviews.id")
   .order("ratings_count DESC")
   .limit(5)
-  
-    )}
+  )}
 
   private
   def titleize_product

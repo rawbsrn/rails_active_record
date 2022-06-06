@@ -20,7 +20,7 @@ A website with CRUD (Create, Read, Update, and Delete) functionality to track pr
 
 *  Git clone repository to local machine:
 ```
-git clone https://github.com/rawbsrn/volunteer_tracker.git
+git clone https://github.com/rawbsrn/rails_active_record.git
 ```
 
 * Install dependencies:
@@ -30,7 +30,7 @@ bundle install
 
 * Start the application:
 ```
-rails s
+cd marios_specialty_foods && rails s
 ```
 
 Navigate to the URL below in the web browser of your choice
@@ -50,6 +50,9 @@ http://localhost:3000/
 * Project is in a polished, portfolio-quality state.
 
 ## Known Bugs
+
+Under "Most Well Reviewed Product, Sometimes the links will give you a "ActiveRecord::RecordNotFound Couldn't find Product with 'id'" Error. 
+
 
 * Please report any issues to: 
 
