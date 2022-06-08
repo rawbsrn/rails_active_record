@@ -8,7 +8,10 @@
 * Capybara
 * HTML
 * Rails
+* rspec-rails
 * Postgresql
+* selenium-webdriver
+* shoulda-matchers
 
 ## Description
 

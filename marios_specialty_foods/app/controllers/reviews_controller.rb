@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.new(review_params)
     if @review.save
       redirect_to product_path(@product)
+      flash[:notice] = "Review successfully added!"
     else
       render :new
     end
@@ -32,6 +33,7 @@ class ReviewsController < ApplicationController
     def update
       @review = Review.find(params[:id])
       if @review.update(review_params)
+        flash[:notice] = "Review successfully updated!"
         redirect_to product_path(@review.product)
       else
         @product = Product.find(params[:product_id])
@@ -43,12 +45,13 @@ class ReviewsController < ApplicationController
     def destroy
       @review = Review.find(params[:id])
       @review.destroy
+      flash[:notice] = "Review successfully DESTROYED!!"
       redirect_to product_path(@review.product)
     end
 
     private
     def review_params
-      params.require(:review).permit(:author, :content_body)
+      params.require(:review).permit(:author, :content_body, :rating)
     end
 
 end
