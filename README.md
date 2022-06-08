@@ -51,11 +51,7 @@ http://localhost:3000/
 
 ## Known Bugs
 
-Under "Most Well Reviewed Product, Sometimes the links will give you a "ActiveRecord::RecordNotFound Couldn't find Product with 'id'" Error. 
-
-
 * Please report any issues to: 
-
 
 * Rob . Sameh @ gmail {dot} com
 
