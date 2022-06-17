@@ -1,4 +1,5 @@
 Product.destroy_all
+User.destroy_all
 product_id_array = []
 50.times do |index|
   Product.create!(name: Faker::Space.unique.meteorite, cost: Faker::Number.between(from: 1, to: 10), country_of_origin: Faker::Address.country) 
@@ -16,3 +17,8 @@ product_id_array.each do |num|
 end
 
 p "Created #{Review.count} reviews"
+
+generated_password = Devise.friendly_token.first(8)
+
+User.create!(email: 'admin@admin.com',username: 'admin', password: generated_password)
+p "Created account admin:#{generated_password}, use these credentials wisely."
