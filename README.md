@@ -2,6 +2,13 @@
 
 #### By _**Rob Sameh**_
 
+## TODO:
+
+* UPDATE README for Authentication
+* Write Authentication tests
+* Do basic Styling
+
+
 ## Technologies Used
 
 * Ruby
@@ -10,6 +17,7 @@
 * Rails
 * rspec-rails
 * Postgresql
+* Devise
 * selenium-webdriver
 * shoulda-matchers
 

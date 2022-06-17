@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:home, :index]
+  before_action :only => [:new, :edit,:destroy] do
+    redirect_to root_path unless current_user && current_user.admin
+  end
 
   def home
     @products = Product.all

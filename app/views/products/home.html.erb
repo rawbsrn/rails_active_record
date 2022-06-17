@@ -31,8 +31,16 @@
         <p>There are no reviewed products yet.</p>
           <% end %>
 
-
+          <% if user_signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <p><%= link_to "Change your password", edit_user_registration_path %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Register", new_user_registration_path %>
+        <% end %>
           <% if current_user && current_user.admin %>
 <p><%= link_to "Create new product", new_product_path %></p>
 <% end %>
+
 <p><%= link_to "View all products", products_path %></p>
