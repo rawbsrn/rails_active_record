@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
   
+
   def home
     @products = Product.all
     render :home
+  end
+
+  def index
+    @products = Product.all
+    render :index
   end
 
   def new

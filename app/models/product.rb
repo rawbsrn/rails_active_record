@@ -14,11 +14,11 @@ class Product < ApplicationRecord
   )}
 
   scope :review_ratings, -> {(
-  select("products.id, products.name, reviews.product_id, avg(reviews.rating) as ratings_count")
+  select("products.id, products.name, reviews.product_id, count(reviews.id) as ratings_count")
   .joins(:reviews)
   .group("products.id, reviews.product_id")
   .order("ratings_count DESC")
-  .limit(5)
+  .limit(1)
   )}
 
   private
