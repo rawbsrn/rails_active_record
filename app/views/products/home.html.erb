@@ -1,4 +1,6 @@
-<h1>Products</h1>
+<div class="container-fluid">
+<div class="p-3 mb-2 bg-info text-dark">
+<h1 >Marios Products</h1>
 
   <h2>Products of the USA</h2>
     <% if @products.united_states.any? %>
@@ -32,15 +34,17 @@
           <% end %>
 
           <% if user_signed_in? %>
-          <%= link_to current_user.email, edit_user_registration_path %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          <p><%= link_to "Change your password", edit_user_registration_path %>
+          <button type="button" class="btn btn-default"><%= link_to current_user.email, edit_user_registration_path %></button>
+          <button type="button" class="btn btn-default"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+          <button type="button" class="btn btn-default"><%= link_to "Change your password", edit_user_registration_path %></button>
         <% else %>
-          <%= link_to "Log in", new_user_session_path %>
-          <%= link_to "Register", new_user_registration_path %>
+        <button type="button" class="btn btn-default"><%= link_to "Log in", new_user_session_path %></button>
+        <button type="button" class="btn btn-default"><%= link_to "Register", new_user_registration_path %></button>
         <% end %>
           <% if current_user && current_user.admin %>
-<p><%= link_to "Create new product", new_product_path %></p>
+<button type="button" class="btn btn-default"><%= link_to "Create new product", new_product_path %></button>
 <% end %>
 
-<p><%= link_to "View all products", products_path %></p>
+<button type="button" class="btn btn-success"><%= link_to "View all products", products_path %></button>
+</div>
+</div>

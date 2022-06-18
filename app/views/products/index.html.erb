@@ -1,3 +1,5 @@
+<div class="container-fluid">
+<div class="p-3 mb-2 bg-info text-dark">
 <h1>Products</h1>
 
 <% if @products.any? %>
@@ -11,14 +13,16 @@
   <p>There are no products yet.</p>
 <% end %>
 <% if user_signed_in? %>
-          <%= link_to current_user.email, edit_user_registration_path %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          <p><%= link_to "Change your password", edit_user_registration_path %>
-        <% else %>
-          <%= link_to "Log in", new_user_session_path %>
-          <%= link_to "Register", new_user_registration_path %>
-        <% end %>
-          <% if current_user && current_user.admin %>
-<p><%= link_to "Create new product", new_product_path %></p>
+<button type="button" class="btn btn-default"><%= link_to current_user.email, edit_user_registration_path %></button>
+<button type="button" class="btn btn-default"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+<button type="button" class="btn btn-default"><%= link_to "Change your password", edit_user_registration_path %></button>
+<% else %>
+<button type="button" class="btn btn-default"><%= link_to "Log in", new_user_session_path %></button>
+<button type="button" class="btn btn-default"><%= link_to "Register", new_user_registration_path %></button>
 <% end %>
-<p><%= link_to "Go to Homepage", root_path %></p>
+<% if current_user && current_user.admin %>
+<button type="button" class="btn btn-default"><%= link_to "Create new product", new_product_path %></button>
+<% end %>
+<button type="button" class="btn btn-success"><%= link_to "Go to Homepage", root_path %></button>
+</div>
+</div>

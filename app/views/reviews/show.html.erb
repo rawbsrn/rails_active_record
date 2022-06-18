@@ -1,12 +1,16 @@
+<div class="container-fluid">
+<div class="p-3 mb-2 bg-info text-dark">
 <h1>Review: <%= @review.author %></h1>
 <h2>Product: <%= @product.name %></h2>
 <h2>Rating: <%= @review.rating %></h2>
 <h3><%= @review.content_body %></h3>
 <% if current_user && current_user.admin %>
-<p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
-<p><%= link_to "Delete review", product_review_path(@product, @review),
+<button><%= link_to "Edit review", edit_product_review_path(@product, @review) %></button>
+<button><%= link_to "Delete review", product_review_path(@product, @review),
                         :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
+                                       :method => "delete"} %></button>
                                        <% end %>
 
-<p><%= link_to "Return to product", product_path(@product) %></p>
+<button><%= link_to "Return to product", product_path(@product) %></button>
+</div>
+</div>
