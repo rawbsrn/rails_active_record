@@ -19,6 +19,6 @@ end
 p "Created #{Review.count} reviews"
 
 generated_password = Devise.friendly_token.first(8)
-
+# User.create!(email: 'admin@testaccount.com',username: 'testadmin', password: 'correcthorsebatterystaple', admin: true)
 User.create!(email: 'admin@admin.com',username: 'admin', password: generated_password, admin: true)
 p "Created account admin:#{generated_password}, use these credentials wisely."

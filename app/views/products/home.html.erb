@@ -42,7 +42,7 @@
         <button type="button" class="btn btn-default"><%= link_to "Register", new_user_registration_path %></button>
         <% end %>
           <% if current_user && current_user.admin %>
-<button type="button" class="btn btn-default"><%= link_to "Create new product", new_product_path %></button>
+<button type="button" class="btn btn-default" id:"name"><%= link_to "Create new product", new_product_path %></button>
 <% end %>
 
 <button type="button" class="btn btn-success"><%= link_to "View all products", products_path %></button>
