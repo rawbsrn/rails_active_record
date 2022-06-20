@@ -47,9 +47,6 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
   include Warden::Test::Helpers
   config.use_transactional_fixtures = false
-  config.after :each do
-    Warden.test_reset!
-  end
 end
 
 Shoulda::Matchers.configure do |config|
