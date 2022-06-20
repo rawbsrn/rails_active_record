@@ -5,8 +5,6 @@
 ## TODO:
 
 * UPDATE README for Authentication
-* Write Authentication tests
-* Do basic Styling
 
 
 ## Technologies Used
