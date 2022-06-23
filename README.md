@@ -2,18 +2,13 @@
 
 #### By _**Rob Sameh**_
 
-## TODO:
-
-* UPDATE README for Authentication
-
-
 ## Technologies Used
 
 * Ruby
-* Capybara
 * HTML
 * Rails
 * rspec-rails
+* Capybara
 * Postgresql
 * Devise
 * selenium-webdriver
@@ -21,7 +16,9 @@
 
 ## Description
 
-A website with CRUD (Create, Read, Update, and Delete) functionality to track products and reviews in a SQL database with one-to-many relationship.
+A website with CRUD (Create, Read, Update, and Delete) functionality to track products and reviews in a SQL database with one-to-many relationship. Now with Authentication featuring administrator and user accounts. A user must be signed in to add a review to a product. Administators can add, remove, and edit products and reviews.
+
+
 
 ## Setup/Installation Requirements
 
@@ -36,9 +33,10 @@ git clone https://github.com/rawbsrn/rails_active_record.git
 ```
 bundle install
 ```
-* Prepare database:
+* Prepare database, Check the terminal output for the Admin creds!:
 ```
 rake db:create db:migrate db:test:prepare db:seed
+
 ```
 * Start the application:
 ```
