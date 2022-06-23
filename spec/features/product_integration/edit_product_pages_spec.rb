@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "the edit a product process" do
   it "adds a new product" do
+    User.destroy_all
     user = User.create!(:email => 'admin@testaccount.com',:username => 'testadmin', :password => 'correcthorsebatterystaple', :admin => true)
     visit root_path
     click_link('Log in')
@@ -24,6 +25,7 @@ describe "the edit a product process" do
   end
 
   it "gives an error when no name is entered" do
+    User.destroy_all
     user = User.create!(:email => 'admin@testaccount.com',:username => 'testadmin', :password => 'correcthorsebatterystaple', :admin => true)
     visit root_path
     click_link('Log in')
@@ -34,6 +36,5 @@ describe "the edit a product process" do
     visit new_product_path
     click_on 'Create Product'
     expect(page).to have_content "Name can't be blank"
-    user.destroy
   end
 end

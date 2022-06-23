@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "the add a review process", js: true do
   it "adds a new review" do
+    User.destroy_all
     user = User.create!(:email => 'admin@testaccount.com',:username => 'testadmin', :password => 'correcthorsebatterystaple', :admin => true)
     visit root_path
     click_link('Log in')
@@ -25,6 +26,5 @@ describe "the add a review process", js: true do
       click_link('Delete review')
     end
     expect(page).to have_content 'Review successfully DESTROYED!!'
-  user.destroy
   end
 end
