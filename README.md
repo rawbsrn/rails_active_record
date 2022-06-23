@@ -59,6 +59,39 @@ http://localhost:3000/
 
 * You may need to install Postgresql on your machine in order to get working, you can follow the instructions here for more information: `https://www.learnhowtoprogram.com/ruby-and-rails-part-time/getting-started-with-ruby/installing-postgres`
 
+## Making Your Own Admin Account
+
+* Start the application:
+
+```
+rails s
+```
+* Navigate to the URL below in the web browser of your choice and press the "Register" button to create a user account:
+
+```
+http://localhost:3000/
+```
+* open the rails console
+
+```
+rails c
+```
+* Update your admin status to true
+
+```
+User.where(email: "INSERT YOUR EMAIL").update(admin: true)
+```
+* Start the application again:
+
+```
+rails s
+```
+* Navigate to the URL below in the web browser of your choice and press the "Log in" button to use your new admin account:
+
+```
+http://localhost:3000/
+```
+
 ## Known Bugs
 
 * Please report any issues to: 
