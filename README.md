@@ -25,25 +25,32 @@ A website with CRUD (Create, Read, Update, and Delete) functionality to track pr
 **_Run the following commands in your command line:_**
 
 *  Git clone repository to local machine:
+
 ```
 git clone https://github.com/rawbsrn/rails_active_record.git
 ```
+* cd into the project directory:
 
+```
+cd rails_active_record:
+```
 * Install dependencies:
+
 ```
 bundle install
 ```
 * Prepare database, Check the terminal output for the Admin creds!:
-```
-rake db:create db:migrate db:test:prepare db:seed
 
 ```
+rake db:create db:migrate db:test:prepare db:seed
+```
 * Start the application:
+
 ```
 rails s
 ```
-
 * Navigate to the URL below in the web browser of your choice:
+
 ```
 http://localhost:3000/
 ```
